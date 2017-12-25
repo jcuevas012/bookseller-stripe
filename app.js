@@ -8,6 +8,7 @@ const path = require('path')
 
 
 var app = express();
+const port = process.env.PORT || 5000
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars')
@@ -44,6 +45,7 @@ app.post('/charge', function (req, res) {
     })
 })
 
-app.listen(5000, (req, res) => {
+
+app.listen(port, (req, res) => {
     console.log(chalk.green('[book seller] alredy started.'))
 });
